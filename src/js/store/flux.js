@@ -12,12 +12,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			login: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			exampleFunction: credentials => {
+				setStore({ login: { credentials } });
+			},
+			login: login => {
+				fetch("http....", {
+					method: "post",
+					headers: { "Content-type": "application/json" },
+					body: JSON.stringify({
+						username: login.username,
+						password: login["password"]
+					})
+				});
 			},
 			loadSomeData: () => {
 				/**
