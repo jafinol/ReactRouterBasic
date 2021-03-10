@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-
 import { Context } from "../store/appContext";
+import PropTypes from "prop-types";
+import { Link, useParams } from "react-router-dom";
 
 import "../../styles/demo.scss";
 
 export const Page2 = () => {
+	const [login, setLogin] = useState({ username: "", password: "" });
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -34,6 +35,44 @@ export const Page2 = () => {
 				</p>
 			</div>
 
+			<div className="row">
+				<div className="col-md-5">
+					<div className="input-group mb-3">
+						<input
+							type="text"
+							className="form-control"
+							placeholder="Username"
+							aria-label="Username"
+							aria-describedby="basic-addon2"
+							onClick={e => setLogin({ ...login, username: e.target.value })}
+						/>
+						<div className="input-group-append">
+							<span className="input-group-text" id="basic-addon2">
+								<i className="fas fa-user" />
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="row">
+				<div className="col-md-5">
+					<div className="input-group mb-3">
+						<input
+							type="Password"
+							className="form-control"
+							placeholder="Password"
+							aria-label=""
+							aria-describedby="basic-addon2"
+							onClick={e => setLogin({ ...login, password: e.target.value })}
+						/>
+						<div className="input-group-append">
+							<span className="input-group-text" id="basic-addon2">
+								<i className="fas fa-key" />
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
 			<br />
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
