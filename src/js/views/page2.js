@@ -44,7 +44,7 @@ export const Page2 = () => {
 							placeholder="Username"
 							aria-label="Username"
 							aria-describedby="basic-addon2"
-							onClick={e => setLogin({ ...login, username: e.target.value })}
+							onChange={e => setLogin({ ...login, username: e.target.value })}
 						/>
 						<div className="input-group-append">
 							<span className="input-group-text" id="basic-addon2">
@@ -63,7 +63,7 @@ export const Page2 = () => {
 							placeholder="Password"
 							aria-label=""
 							aria-describedby="basic-addon2"
-							onClick={e => setLogin({ ...login, password: e.target.value })}
+							onChange={e => setLogin({ ...login, password: e.target.value })}
 						/>
 						<div className="input-group-append">
 							<span className="input-group-text" id="basic-addon2">
@@ -73,6 +73,15 @@ export const Page2 = () => {
 					</div>
 				</div>
 			</div>
+
+			<button
+				type="button"
+				className="btn btn-primary"
+				onClick={() => {
+					actions.exampleFunction(login);
+				}}>
+				Login
+			</button>
 			<br />
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
