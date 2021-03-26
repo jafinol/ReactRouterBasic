@@ -52,5 +52,5 @@ jobs:
       with:
         app-name: 'reactjsfinol'
         slot-name: 'reactjstestfinol'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9e4901566a5446f3af128b7c9ecd9cfc }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_2fabd5129d6940289dfe3356322dcccb }}
         package: .
